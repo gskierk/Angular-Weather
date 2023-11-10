@@ -2,7 +2,6 @@
   <p>weather-widget works!</p>
 
   <div>
-    <span *ngFor="let x of units">{{ x }}</span>
     <select (change)="onChangeUnits($event)">
       <option [value]="x" *ngFor="let x of units">{{ x }}</option>
     </select>

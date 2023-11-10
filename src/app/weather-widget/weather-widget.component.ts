@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherWidgetService } from './weather-widget.service';
 import { WeatherWidget } from './weather-widget.interface';
-import { EventType } from '@angular/router';
 
 @Component({
   selector: 'app-weather-widget',
@@ -20,12 +19,17 @@ export class WeatherWidgetComponent {
   public constructor (private readonly weatherWidgetService: WeatherWidgetService) {}
 
   public ngOnInit() {
-    this.weatherWidgetService.getCurrentWeatherData('standard').subscribe((data: any) => {
-      this.weather = data
-    })
+    this.refreshCurrentWeatherData()
   }
 
   public onChangeUnits(event: Event) {
     this.unit = (event.target as any).value
+    this.refreshCurrentWeatherData()
+  }
+
+  private refreshCurrentWeatherData() {
+    this.weatherWidgetService.getCurrentWeatherData(this.unit).subscribe((data: any) => {
+      this.weather = data
+    })
   }
 }
