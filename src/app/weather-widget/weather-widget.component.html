@@ -8,6 +8,12 @@
   </div>
 
   <div>
+    <select (change)="onChangeCities($event)">
+      <option [value]="x.name" *ngFor="let x of cities">{{ x.name }}</option>
+    </select>
+  </div>
+
+  <div>
     Temp: {{ weather?.temp }}
   </div>
   <div>
@@ -18,5 +24,8 @@
   </div>
   <div>
     TempFeelsLike: {{ weather?.tempFeelsLike }}
+  </div>
+  <div>
+    <img src="{{ weather?.icon }}" />
   </div>
 </div>
