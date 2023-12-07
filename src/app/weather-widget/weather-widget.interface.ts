@@ -1,9 +1,9 @@
 export interface WeatherWidget {
-  temp: number
-  tempMax: number
-  tempMin: number
-  tempFeelsLike: number,
-  icon: string
+  temp?: number
+  tempMax?: number
+  tempMin?: number
+  tempFeelsLike?: number,
+  icon?: string
 }
 
 export interface City {

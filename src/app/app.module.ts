@@ -8,6 +8,8 @@ import { TestingComponentComponent } from './testing-component/testing-component
 import { MenuComponent } from './menu/menu.component';
 import { PageAComponent } from './page-a/page-a.component';
 import { PageBComponent } from './page-b/page-b.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PageBComponent } from './page-b/page-b.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WeatherWidgetModule
+    WeatherWidgetModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
